@@ -3,9 +3,14 @@ import React from 'react';
 import { Text, View } from 'react-native';
 
 // Make a component
+// Modify the constant header to pass in a props method
 const Header = (props) => {
+  // Make textstyle and viewstyle available to function scope
   const { textStyle, viewStyle } = styles;
 
+  // Return modified header, props.headerText refers to the
+  // passing down info from parent to child. props.headerText
+  // will give the header styling.
   return (
     <View style={viewStyle}>
       <Text style={textStyle}>{props.headerText}</Text>
@@ -32,4 +37,4 @@ const styles = {
 };
 
 // Make the componenet available to other parts of the app
-export default Header;
+export { Header };
